@@ -1,0 +1,25 @@
+{
+  "name": "liri-app",
+  "version": "1.0.0",
+  "description": "accepts CLI to query twitter, OMDB, &amp; spotify API's.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guapaholic/liri-app.git"
+  },
+  "author": "Julian Cruz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Guapaholic/liri-app/issues"
+  },
+  "homepage": "https://github.com/Guapaholic/liri-app#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.0.0",
+    "node-spotify-api": "^1.0.7",
+    "twitter": "^1.7.1"
+  }
+}
