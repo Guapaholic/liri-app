@@ -7,20 +7,26 @@ const cliCommand = process.argv[2]
 const argument = process.argv[3]
 let movieName = process.argv[3]
 
-var client = new Twitter({
-  consumer_key: process.env.TWITTER_CONSUMER_KEY,
-  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
-  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-});
+// var client = new Twitter({
+//   consumer_key: process.env.TWITTER_CONSUMER_KEY,
+//   consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+//   access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+//   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+// });
 
 
 switch (cliCommand) {
   case "my-tweets": {
-    var params = {screen_name: 'CruJulien'};
+    var params = {screen_name: 'crujulien'}
+    var client = new Twitter(keys.twitter)
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
       if (!error) {
-        console.log(tweets);
+        console.log('\nHere are your last 20 tweets! \n')
+        for (i=0 ; i < tweets.length ; i++) {
+          console.log(`${tweets[i].text} \n`)
+        }
+      } else if (error) {
+        console.log(error)
       }
     });
   }
